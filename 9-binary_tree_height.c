@@ -8,9 +8,12 @@
  */
 size_t binary_tree_height_recursive(const binary_tree_t *tree, size_t height)
 {
-	if (!tree)
+	if (!tree || (!tree->right && !tree->left))
 		return (height);
-	return (binary_tree_height_recursive(tree->left, height + 1));
+	return ((binary_tree_height_recursive(tree->left, height + 1) >
+		binary_tree_height_recursive(tree->right, height + 1)) ?
+		binary_tree_height_recursive(tree->left, height + 1) :
+		binary_tree_height_recursive(tree->left, height + 1));
 }
 
 
