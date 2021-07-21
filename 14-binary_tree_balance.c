@@ -1,6 +1,10 @@
 #include "binary_trees.h"
 
-/***/
+/**
+ *binary_tree_balance_recursive - found the balance
+ *@tree: Node
+ *Return: the factor difference of the balance
+ */
 int binary_tree_balance_recursive(const binary_tree_t *tree)
 {
 	int heightr = 0;
